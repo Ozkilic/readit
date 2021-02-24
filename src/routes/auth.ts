@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import cookie from 'cookie'
 
-import { User } from '../entities/User'
+import User from '../entities/User'
 import auth from '../middleware/auth'
 
 const register = async (req: Request, res: Response) => {
@@ -13,7 +13,7 @@ const register = async (req: Request, res: Response) => {
     // VALIDATE DATA
     let errors: any = {}
     const emailUser = await User.findOne({ email })
-    const usernameUser = await User.find({ username })
+    const usernameUser = await User.findOne({ username })
 
     if (emailUser) errors.email = 'Email is already taken'
     if (usernameUser) errors.username = 'Username is already taken'
