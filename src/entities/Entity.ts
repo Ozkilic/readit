@@ -1,11 +1,8 @@
 import {
   PrimaryGeneratedColumn,
-  Column,
   BaseEntity,
-  Index,
   CreateDateColumn,
   UpdateDateColumn,
-  BeforeInsert,
 } from 'typeorm'
 import { classToPlain, Exclude } from 'class-transformer'
 
